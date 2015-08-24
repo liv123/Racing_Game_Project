@@ -53,12 +53,13 @@ $(document).ready(function() {
     this.trackLength = 10;
   };
 
-    Track.prototype.append = function() {
-      $(#track).append
+    // This is my clone/append function - tried a bunch of stuff, but no success yet
+    //Track.prototype.append = function() {
+    //   $(#track).append
 
-        console.log (track appended)
+    //     console.log (track appended)
 
-    }
+    // }
 
 
 //Store any other properties that board may have below, such as a reset option
