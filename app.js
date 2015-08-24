@@ -4,12 +4,12 @@
 function Game() {
   //Create a new instance of player 1
   //this.player1 = ...
-  player1 = new Player ('red', 'x', 97);
+  this.player1 = new Player ('red', 'x', 97);
   console.log ("player 1 created");
 
   //Do the same for a player 2
   //this.player2 = ...
-  player2 = new Player ('blue', 'i', 108);
+  this.player2 = new Player ('blue', 'i', 108);
   console.log ("player 2 created");
   //Create the track
   //this.track = ...
@@ -20,16 +20,13 @@ function Game() {
 Game.prototype.init = function() {
   $("table td").removeClass("active");
   $("table td:first-child").addClass("active");
-  i=1;
-  x=1;
+  
+    $(document).ready(function() {
+  //attached listeners
+      $(".play").click(play);
+        $(document).keypress(hitKey);
 
-  $(document).ready(function() {
-  //attach listeners
-    $(".play").click(play);
-    $(document).keypress(hitKey);
-
-
-  });
+    });
 };
 
 // A starter Player constructor.
