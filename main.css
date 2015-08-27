@@ -1,7 +1,7 @@
 <!---CSS for Racing Game--->
 
 
-.racetrack {
+.track {
   max-width: 800px;
   margin: 10px auto;
   float: left;
@@ -9,11 +9,6 @@
   margin-left: 20%;
 }
 
-
-
-td {
-  background-color: white;
-}
 
 .active {
   background-color: red;
@@ -30,7 +25,7 @@ tr, td {
   border: 2px solid #ccc;
 }
 
-.btn {
+#btn_play {
   background-color: red;
   color: white;
   font-weight: bold;
