@@ -23,13 +23,7 @@ var tracksize = 20
     };
 
 
-    Player.prototype.win = function()  {
-      console.log("player1 win prototype works");
-      if ('.active'){
-        console.log("reached last-child");
-        window.alert("Player 1 Wins!");
-      }
-    };
+    
 
 
 
@@ -47,7 +41,13 @@ var tracksize = 20
         }
     };    
          
-
+    Player.prototype.win = function()  {
+      console.log("player1 win prototype works");
+      // if ($('.active')){
+      //   console.log("player 1 Wins");
+      //   window.alert("Player 1 Wins!");
+      // }
+    };
 
 
   // A starter Player constructor.
@@ -71,6 +71,6 @@ $(document).ready(function() {
 //attach listeners
  $('#btn_play').click(Game.prototype.init);
  $(document).keypress(Player.prototype.move);
- $('#20').active(Player.prototype.win);.
+ $('.active').on(Player.prototype.win);
   
 });
