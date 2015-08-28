@@ -11,7 +11,7 @@ var tracksize = 20
 
     //Do the same for a player 2
     //this.player2 = ...
-    // this.player2 = new Player ('97', blue, '.track2');
+    this.player2 = new Player (97, 'blue', '.track2');
     //console.log ("player 2 created"); 
   }; 
 
@@ -23,28 +23,31 @@ var tracksize = 20
     };
 
 
-    Player.prototype.move = function(e) {
-      console.log(this);
-      var i=0
-        if ((e.which == game.player1.letter) && (i<tracksize)) {
-          console.log("e.which == this.letter");
-          $(game.player1.location + " .active").removeClass("active").next().addClass("active");
-          
-
-        }
+    Player.prototype.win = function()  {
+      console.log("player1 win prototype works");
+      if ('.active'){
+        console.log("reached last-child");
+        window.alert("Player 1 Wins!");
+      }
     };
 
 
 
-  // function keyhit(e) {
-  //     if (e.which == Game.Player.letter) { 
-  //       game.Player.move();
-  //     }    
-  //     else if (game.Player.position > 10) {
-  //         alert('player ' + Player + 'wins!');
-  //     }
-        
-  // }; 
+
+    Player.prototype.move = function(e) {
+      //console.log('this move works');
+      var i=0
+        if (e.which == game.player1.letter) { //&& (i<tracksize)) {
+          //console.log("e.which == this.letter");
+          $(game.player1.location + " .active").removeClass("active").next().addClass("active");
+        }
+        if (e.which == game.player2.letter) {
+          //console.log("e.which == 2nd this.letter")
+          $(game.player2.location + " .active").removeClass("active").next().addClass("active");
+        }
+    };    
+         
+
 
 
   // A starter Player constructor.
@@ -68,5 +71,6 @@ $(document).ready(function() {
 //attach listeners
  $('#btn_play').click(Game.prototype.init);
  $(document).keypress(Player.prototype.move);
+ $('#20').active(Player.prototype.win);.
   
 });
